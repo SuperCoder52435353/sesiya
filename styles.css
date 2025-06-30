@@ -1,0 +1,76 @@
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { transform: translateX(100%); }
+    to { transform: translateX(0); }
+}
+
+.animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient 5s ease infinite;
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-out;
+}
+
+.slide-in {
+    animation: slideIn 0.3s ease-out;
+}
+
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+
+#chatMessages p {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    max-width: 80%;
+    word-break: break-word;
+    animation: fadeIn 0.5s ease-out;
+}
+
+#chatMessages .user-message {
+    background-color: #e0e7ff;
+    margin-left: auto;
+    text-align: right;
+}
+
+#chatMessages .ai-message {
+    background-color: #f3f4f6;
+    text-align: left;
+}
+
+.dark #chatMessages .user-message { background-color: #4b5e8e; }
+.dark #chatMessages .ai-message { background-color: #4b5563; }
+
+button:hover {
+    transition: all 0.3s ease-in-out;
+    transform: scale(1.05);
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px #4f46e5;
+    transition: all 0.3s ease-in-out;
+}
+
+.tab-btn.active {
+    background-color: #4f46e5;
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    #chatContainer { height: 400px; }
+    .container { padding: 1rem; }
+    h1 { font-size: 2rem; }
+}
